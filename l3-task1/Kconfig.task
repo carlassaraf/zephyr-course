@@ -1,0 +1,28 @@
+menu "LED blink sleep time (1s (medium))"
+
+  menuconfig ADVANCED_LED_SETTINGS
+    bool "Advanced LED settings"
+    default n
+
+  if ADVANCED_LED_SETTINGS
+    config LED_BRIGHTNESS
+      int "LED brightness (0-100)"
+      default 100
+      range 0 100
+
+    config LED_FADE_DURATION
+      int "LED fade duration (ms)"
+      default 500
+      range 0 10000
+      
+    menu "Expert settings"
+      config ENABLE_LED_DEBUGGING
+        bool "Enable LED debugging"
+        default n
+      config CUSTOM_BLINK_PATTERN
+        bool "Custom blink pattern"
+        default n
+    endmenu
+
+  endif
+endmenu
