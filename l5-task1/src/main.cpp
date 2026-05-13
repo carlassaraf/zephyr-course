@@ -1,5 +1,6 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
+#include <zephyr/usb/usb_device.h>
 
 /* The devicetree node identifier for the "ledr" alias. */
 #define LEDR_NODE DT_ALIAS(ledr)
@@ -12,6 +13,7 @@ static const struct gpio_dt_spec ledb = GPIO_DT_SPEC_GET(LEDB_NODE, gpios);
 
 int main(void)
 {
+    usb_enable(NULL);
     bool led_state = true;
 
     if (!gpio_is_ready_dt(&ledr)) return 0;
