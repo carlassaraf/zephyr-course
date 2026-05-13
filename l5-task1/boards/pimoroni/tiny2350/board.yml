@@ -1,0 +1,6 @@
+board:
+  name: tiny2350
+  full_name: Tiny 2350
+  vendor: pimoroni
+  socs:
+  - name: rp2350a
