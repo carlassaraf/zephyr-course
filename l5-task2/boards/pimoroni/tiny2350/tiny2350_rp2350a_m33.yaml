@@ -1,0 +1,16 @@
+identifier: tiny2350/rp2350a/m33
+name: Pimoroni Tiny 2350 (Cortex-M33)
+type: mcu
+arch: arm
+flash: 4096
+ram: 520
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - clock
+  - gpio
+  - pwm
+  - uart
+  - usbd
+vendor: pimoroni
