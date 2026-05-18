@@ -1,0 +1,22 @@
+common:
+  tags:
+    - unit
+    - calculator
+    - ztest
+
+tests:
+  # Default scenario: shuffled test order exposes hidden ordering dependencies
+  example.unit.calculator:
+    platform_allow: native_sim
+    timeout: 60
+
+  # Deterministic scenario: fixed order for live demos or failure bisection.
+  example.unit.calculator.ordered:
+    platform_allow: native_sim
+    timeout: 60
+    extra_args: CONFIG_ZTEST_SHUFFLE=n
+
+  # Hardware scenario: same unit tests running on an nRF54L15DK.
+  example.unit.calculator.hw:
+    platform_allow: nrf54l15dk/nrf54l15/cpuapp
+    timeout: 120
