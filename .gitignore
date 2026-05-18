@@ -7,3 +7,5 @@ deps
 
 # Custom workspace configuration
 .vscode
+
+twister*

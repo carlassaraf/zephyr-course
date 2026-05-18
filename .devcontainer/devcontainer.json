@@ -1,0 +1,23 @@
+{
+  "name": "Zephyr Course",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Mount the entire west workspace root (3 levels up from the course folder)
+  // so `west` can resolve all modules. VS Code opens to workspaceFolder inside it.
+  "workspaceMount": "source=${localWorkspaceFolder}/../../..,target=/workdir,type=bind,consistency=cached",
+  "workspaceFolder": "/workdir/zephyr/samples/zephyr-course",
+  "remoteEnv": {
+    "ZEPHYR_BASE": "/workdir/zephyr",
+    "ZEPHYR_SDK_INSTALL_DIR": "/opt/zephyr-sdk-1.0.1"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake"
+      ]
+    }
+  }
+}
